@@ -1,0 +1,66 @@
+#include <stdio.h>
+
+int main() {
+    // Datos de las rutas de buses
+    char numero_ruta_1[] = "COOTRATLANTICO. C10-4142.kmz. C15-4144.kmz";
+    char *estacion_ruta_1_1 = "Estación C10-4142.kmz";
+    char *estacion_ruta_1_2 = "Estación C15-4144.kmz";
+    char *estacion_ruta_1_3 = "Estación C20-4146.kmz";
+
+    char numero_ruta_2[] = "TRANSMECAR. D10-4172.kmz. D11-4153.kmz. C17-4160.kmz. D9-4152.kmz.";
+    char *estacion_ruta_2_1 = "Estación D10-4172.kmz";
+    char *estacion_ruta_2_2 = "Estación D11-4153.kmz ";
+    char *estacion_ruta_2_3 = "Estación C17-4160.kmz";
+
+    char numero_ruta_3[] = "Dias feriados TRANSDIAZ. A11-4115.kmz. A10-4114.kmz. B16-4130.kmz.";
+    char *estacion_ruta_3_1 = "Estación A11-4115.kmz";
+    char *estacion_ruta_3_2 = "Estación A10-4114.kmz";
+    char *estacion_ruta_3_3 = "Estación B16-4130.kmz";
+
+    int opcion;
+    char numero_ruta[20];
+    int continuar = 1;
+
+    // aqui creo un bucle para que le de la opción al usuario de salir del programa 
+    while (continuar) {
+        int ruta_encontrada = 0;
+        printf("\n Bienvenido al Menu para ver las paradas de las rutas:\n");
+        printf("1. Ver paradas de la ruta COOTRATLANTICO. C10-4142.kmz. C15-4144.kmz\n");
+        printf("2. Ver paradas de la ruta TRANSMECAR. D10-4172.kmz. D11-4153.kmz. C17-4160.kmz. D9-4152.kmz.\n");
+        printf("3. Ver paradas de la ruta Dias Feriados TRANSDIAZ. A11-4115.kmz. A10-4114.kmz. B16-4130.kmz.\n");
+        printf("4. Salir\n");
+        printf("Elige una opción: ");
+        scanf("%d", &opcion);
+
+        if (opcion == 1) {
+            printf("Paradas de la ruta %s:\n", numero_ruta_1);
+            printf("- %s\n", estacion_ruta_1_1);
+            printf("- %s\n", estacion_ruta_1_2);
+            printf("- %s\n", estacion_ruta_1_3);
+            ruta_encontrada = 1;
+        } else if (opcion == 2) {
+            printf("Paradas de la ruta %s:\n", numero_ruta_2);
+            printf("- %s\n", estacion_ruta_2_1);
+            printf("- %s\n", estacion_ruta_2_2);
+            printf("- %s\n", estacion_ruta_2_3);
+            ruta_encontrada = 1;
+        } else if (opcion == 3) {
+            printf("Paradas de la ruta %s:\n", numero_ruta_3);
+            printf("- %s\n", estacion_ruta_3_1);
+            printf("- %s\n", estacion_ruta_3_2);
+            printf("- %s\n", estacion_ruta_3_3);
+            ruta_encontrada = 1;
+        } else if (opcion == 4) {
+            printf("Que tenga buen dia gracias por usar nuestras rutas\n");
+            continuar = 0;
+        } else {
+            printf("Opción inválida. Intenta de nuevo.\n");
+        }
+
+        if (!ruta_encontrada && opcion != 4) {
+            printf("¡Ruta no encontrada!\n");
+        }
+    }
+
+    return 0;
+}
