@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    
+    float baseMayor,baseMenor,altura,area;
+
+    printf("Ingrese la longitud de la base mayor del trapezoide (cm):  ");
+    scanf("%f", &baseMayor);
+
+    printf("Ingrese la longitud de la base menor del trapezoide (cm): ");
+    scanf("%f", &baseMenor);
+
+    printf("Ingrese la altura del trapezoide (cm) : ");
+    scanf("%f", &altura);
+
+    area = ((baseMayor + baseMenor) * altura) / 2;
+    
+    printf("El área del trapezoide con bases %.2f y %.2f y altura %.2f es: %.2fcm2",
+           baseMayor,baseMenor,altura,area);
+
+    return 0;
+}
